@@ -1,6 +1,6 @@
 ﻿import type { RequestOptions } from '@@/plugin-request/request';
 import type { RequestConfig } from '@umijs/max';
-import {message} from "antd";
+import { message } from 'antd';
 
 // 错误处理方案： 错误类型
 enum ErrorShowType {
@@ -26,8 +26,9 @@ interface ResponseStructure {
  * @doc https://umijs.org/docs/max/request#配置
  */
 export const requestConfig: RequestConfig = {
-    // baseURL: 'http://localhost:8101',
-    baseURL: 'http://124.70.63.241:8101',
+    // Todo 修改路径
+    baseURL: 'http://localhost:8101',
+    // baseURL: 'http://124.70.63.241:8101',
     withCredentials: true,
 
     // 请求拦截器
@@ -46,7 +47,7 @@ export const requestConfig: RequestConfig = {
             const { data } = response as unknown as ResponseStructure;
 
             if (data.code !== 0) {
-                message.error(data.message).then(r => {})
+                message.error(data.message).then((r) => {});
             }
             return response;
         },
