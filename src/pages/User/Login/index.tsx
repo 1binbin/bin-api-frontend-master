@@ -88,6 +88,7 @@ const Login: React.FC = () => {
                         autoLogin: true,
                     }}
                     onFinish={async (values) => {
+                        console.log(values);
                         await handleSubmit(values as API.UserRegisterRequest);
                     }}
                 >
@@ -167,6 +168,25 @@ const Login: React.FC = () => {
                                     {
                                         min: 4,
                                         message: '长度不能少于4位！',
+                                    },
+                                ]}
+                            />
+                            <ProFormText
+                                fieldProps={{
+                                    size: 'large',
+                                    prefix: <UserOutlined />,
+                                }}
+                                name="isAdmin"
+                                placeholder={'请输入角色名称'}
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: '角色是必填项！',
+                                    },
+                                    {
+                                        type: 'enum',
+                                        enum: ['user', 'admin'],
+                                        message: '只能填入user（使用者）或者admin（发布者）',
                                     },
                                 ]}
                             />
