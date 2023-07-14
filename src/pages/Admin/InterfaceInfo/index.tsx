@@ -4,6 +4,7 @@ import UpdateModal from '@/pages/Admin/InterfaceInfo/components/UpdateModal';
 import {
     addInterfaceInfoUsingPOST,
     deleteInterfaceInfoUsingPOST,
+    listInterfaceInfoVOByPageForOneUsingPOST,
     listInterfaceInfoVOByPageUsingPOST,
     offlineInterfaceInfoUsingPOST,
     onlineInterfaceInfoUsingPOST,
@@ -459,7 +460,7 @@ const TableList: React.FC = () => {
                 ]}
                 request={async (params) => {
                     console.log('---------->', params);
-                    const res = await listInterfaceInfoVOByPageUsingPOST({
+                    const res = await listInterfaceInfoVOByPageForOneUsingPOST({
                         ...params,
                     });
                     if (res?.data) {

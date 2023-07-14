@@ -1,7 +1,7 @@
-import {PageContainer} from '@ant-design/pro-components';
-import React, {useEffect, useState} from 'react';
+import { PageContainer } from '@ant-design/pro-components';
+import React, { useEffect, useState } from 'react';
 import ReactECharts from 'echarts-for-react';
-import {listTopInvokeInterfaceInfoUsingGET} from "@/services/nero-api-backend/analysisController";
+import { listTopInvokeInterfaceInfoUsingGET } from '@/services/nero-api-backend/analysisController';
 
 const InterfaceAnalysis: React.FC = () => {
     const [data, setData] = useState<API.InterfaceInfoVO[]>([]);
@@ -14,31 +14,31 @@ const InterfaceAnalysis: React.FC = () => {
                     setData(res.data);
                     setLoading(false);
                 }
-            })
+            });
         } catch (e: any) {
-            console.log(e)
+            console.log(e);
         }
-    }, [])
+    }, []);
 
     const chartData = data.map((item) => {
         return {
             name: item.name,
-            value: item.totalNum
-        }
+            value: item.totalNum,
+        };
     });
 
     const option = {
         title: {
             text: '调用次数统计',
-            subtext: 'TOP3',
-            left: 'center'
+            subtext: 'TOP5',
+            left: 'center',
         },
         tooltip: {
-            trigger: 'item'
+            trigger: 'item',
         },
         legend: {
             orient: 'vertical',
-            left: 'left'
+            left: 'left',
         },
         series: [
             {
@@ -50,11 +50,11 @@ const InterfaceAnalysis: React.FC = () => {
                     itemStyle: {
                         shadowBlur: 10,
                         shadowOffsetX: 0,
-                        shadowColor: 'rgba(0, 0, 0, 0.5)'
-                    }
-                }
-            }
-        ]
+                        shadowColor: 'rgba(0, 0, 0, 0.5)',
+                    },
+                },
+            },
+        ],
     };
 
     return (
