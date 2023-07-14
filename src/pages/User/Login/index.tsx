@@ -83,7 +83,7 @@ const Login: React.FC = () => {
                     // logo="https://image-bed-ichensw.oss-cn-hangzhou.aliyuncs.com/logo.png"
                     logo={logo}
                     title="Bin API"
-                    subTitle="史上最好用的免费API接口平台"
+                    subTitle="史上最好用的API接口平台"
                     initialValues={{
                         autoLogin: true,
                     }}
