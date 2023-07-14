@@ -4,7 +4,7 @@ import '@umijs/max';
 import React from 'react';
 
 const Footer: React.FC = () => {
-    const defaultMessage = 'Nero';
+    const defaultMessage = 'BinOpenApi';
     const currentYear = new Date().getFullYear();
     return (
         <DefaultFooter
@@ -15,14 +15,14 @@ const Footer: React.FC = () => {
             links={[
                 {
                     key: 'Ant Design Pro',
-                    title: 'Panda API',
+                    title: 'Bin API',
                     href: 'http://localhost:8000',
                     blankTarget: true,
                 },
                 {
                     key: 'github',
                     title: <GithubOutlined />,
-                    href: 'https://github.com/ichensw/',
+                    href: 'https://github.com/1binbin/',
                     blankTarget: true,
                 },
                 {
