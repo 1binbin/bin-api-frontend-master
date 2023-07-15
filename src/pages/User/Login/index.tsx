@@ -9,6 +9,9 @@ import {
     ProFormCheckbox,
     ProFormInstance,
     ProFormText,
+    ProFormSwitch,
+    ProFormRadio,
+    ProFormSelect,
 } from '@ant-design/pro-components';
 import { useModel } from '@umijs/max';
 import { message, Tabs } from 'antd';
@@ -171,7 +174,7 @@ const Login: React.FC = () => {
                                     },
                                 ]}
                             />
-                            <ProFormText
+                            {/*                            <ProFormText
                                 fieldProps={{
                                     size: 'large',
                                     prefix: <UserOutlined />,
@@ -189,7 +192,7 @@ const Login: React.FC = () => {
                                         message: '只能填入user（使用者）或者admin（发布者）',
                                     },
                                 ]}
-                            />
+                            />*/}
                             <ProFormText.Password
                                 fieldProps={{
                                     size: 'large',
@@ -225,6 +228,16 @@ const Login: React.FC = () => {
                                         message: '长度不能少于8位！',
                                     },
                                 ]}
+                            />
+                            <ProFormSelect
+                                name="isAdmin"
+                                style={{ width: 328 }}
+                                placeholder="请选择角色"
+                                options={[
+                                    { value: 'user', label: '接口使用者——普通用户' },
+                                    { value: 'admin', label: '接口发布者——管理员' },
+                                ]}
+                                rules={[{ required: true, message: '角色选择为必填项' }]}
                             />
                         </>
                     )}

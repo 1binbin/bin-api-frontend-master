@@ -61,7 +61,14 @@ const CreateModal: React.FC<Props> = (props) => {
             <ProFormText
                 name="method"
                 label="请求方法"
-                rules={[{ required: true, message: '请求方法不可为空！' }]}
+                rules={[
+                    { required: true, message: '请求方法不可为空！' },
+                    {
+                        type: 'enum',
+                        enum: ['GET', 'POST', 'GET/POST', 'POST,GET'],
+                        message: '请求方法只能填入GET、POST、GET/POST或POST/GET',
+                    },
+                ]}
             />
 
             <ProFormText
