@@ -51,13 +51,13 @@ const Index: React.FC = () => {
             if (res.data) {
                 // res.data = res.data.replace(/\\/g, '');
                 setInvokeRes(res.data);
-                message.success('接口请求成功');
+                message.success('接口充值成功');
             } else {
                 const messageObj = JSON.parse(res.message as string);
                 message.error(messageObj.message);
             }
         } catch (error: any) {
-            message.error('接口请求失败');
+            message.error('接口充值失败');
         }
         setInvokeLoading(false);
     };
