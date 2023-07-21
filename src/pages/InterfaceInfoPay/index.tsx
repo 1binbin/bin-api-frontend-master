@@ -95,15 +95,15 @@ const Index: React.FC = () => {
             {data ? (
                 <>
                     <Divider />
-                    <Card title={'接口购买'}>
+                    <Card title={'接口充值'}>
                         <Form name="invoke" layout={'vertical'} onFinish={onFinish}>
-                            <Form.Item label={'购买数量'} name={'payNum'} initialValue={100}>
+                            <Form.Item label={'充值数量'} name={'payNum'} initialValue={100}>
                                 <InputNumber size="large" min={1} max={100000} defaultValue={100} />
                             </Form.Item>
 
                             <Form.Item wrapperCol={{ span: 16 }}>
                                 <Button type="primary" htmlType="submit">
-                                    购买
+                                    充值
                                 </Button>
                             </Form.Item>
                         </Form>
