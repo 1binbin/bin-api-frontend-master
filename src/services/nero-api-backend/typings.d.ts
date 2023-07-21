@@ -403,4 +403,9 @@ declare namespace API {
         userProfile?: string;
         userRole?: string;
     };
+
+    type PayRequest = {
+        interfaceInfoId?: number;
+        payNum?: number;
+    };
 }

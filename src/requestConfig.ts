@@ -28,7 +28,7 @@ interface ResponseStructure {
 export const requestConfig: RequestConfig = {
     // Todo 修改路径
     baseURL: 'http://localhost:8101',
-    // baseURL: 'http://124.70.63.241:8101',
+    // baseURL: 'http://123.207.42.125:8101',
     withCredentials: true,
 
     // 请求拦截器

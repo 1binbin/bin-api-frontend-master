@@ -151,3 +151,15 @@ export async function updateInterfaceInfoUsingPOST(
         ...(options || {}),
     });
 }
+
+/** payInterfaceByPOST POST /api/payInterfaceInfo/pay */
+export async function payInterfaceByPOST(body: API.PayRequest, options?: { [key: string]: any }) {
+    return request<API.BaseResponseBoolean_>('/api/payInterfaceInfo/pay', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        data: body,
+        ...(options || {}),
+    });
+}

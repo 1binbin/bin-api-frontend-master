@@ -9,6 +9,13 @@ export default [
         hideInMenu: true,
     },
     {
+        name: '购买接口',
+        icon: 'smile',
+        path: '/interface_info_pay/:id',
+        component: './InterfaceInfoPay',
+        hideInMenu: true,
+    },
+    {
         path: '/user',
         layout: false,
         routes: [{ name: '登录', path: '/user/login', component: './User/Login' }],

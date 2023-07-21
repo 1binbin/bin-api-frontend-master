@@ -26,6 +26,7 @@ const contentStyle: React.CSSProperties = {
 };
 
 const Index: React.FC = () => {
+    const [showModalOpen, handleShowModalOpen] = useState<boolean>(false);
     const [loading, setLoading] = useState(false);
     const [searchText, setSearchText] = useState('');
     const [total, setTotal] = useState<number>(0);
@@ -116,6 +117,15 @@ const Index: React.FC = () => {
                                                 }}
                                             >
                                                 在线调用
+                                            </div>
+                                        </Tooltip>,
+                                        <Tooltip title="购买接口" key="share">
+                                            <div
+                                                onClick={() => {
+                                                    history.push('/interface_info_pay/' + item.id);
+                                                }}
+                                            >
+                                                购买接口
                                             </div>
                                         </Tooltip>,
                                     ]}
