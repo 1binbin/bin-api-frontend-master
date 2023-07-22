@@ -8,17 +8,25 @@ import { Badge, Button, Card, Descriptions, Divider, Form, InputNumber, message 
 import { history } from '@umijs/max';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
+let payNum = 100;
 
 const box = document.getElementById('back');
+const box1 = document.getElementById('price');
 if (box != null) {
     box.style.left = '25px';
 }
+if (box1 != null) {
+    box1.style.color = 'red';
+}
+const onChange = (value: number) => {
+    payNum = value;
+    console.log(payNum);
+};
 
 const Index: React.FC = () => {
     const [invokeLoading, setInvokeLoading] = useState(false);
     const [data, setData] = useState<API.InterfaceInfoVO>();
     const params = useParams();
-    const [invokeRes, setInvokeRes] = useState<any>();
 
     const loadData = async () => {
         try {
@@ -54,7 +62,6 @@ const Index: React.FC = () => {
             });
             console.log('调用接口请求数据：', res);
             if (res.data) {
-                setInvokeRes(res.data);
                 message.success('接口充值成功');
                 history.push('/my_interface');
             } else if (res.code === 50001) {
@@ -81,9 +88,14 @@ const Index: React.FC = () => {
                                 <Badge status="default" text={'关闭'} />
                             )}
                         </Descriptions.Item>
-                        <Descriptions.Item label="主机名">{data.host}</Descriptions.Item>
-                        <Descriptions.Item label="请求地址">{data.url}</Descriptions.Item>
+                        <Descriptions.Item label="请求地址">
+                            {data.host}
+                            {data.url}
+                        </Descriptions.Item>
                         <Descriptions.Item label="请求方法">{data.method}</Descriptions.Item>
+                        <Descriptions.Item label="接口价格" id="price">
+                            {data.price}￥/个
+                        </Descriptions.Item>
                         <Descriptions.Item label="请求参数示例">
                             {data.requestParams}
                         </Descriptions.Item>
@@ -104,9 +116,15 @@ const Index: React.FC = () => {
                     <Card title={'接口充值'}>
                         <Form name="invoke" layout={'vertical'} onFinish={onFinish}>
                             <Form.Item label={'充值数量'} name={'payNum'} initialValue={100}>
-                                <InputNumber size="large" min={1} max={100000} defaultValue={100} />
+                                <InputNumber
+                                    id="id"
+                                    size="large"
+                                    min={1}
+                                    max={100000}
+                                    defaultValue={100}
+                                    onChange={onChange}
+                                />
                             </Form.Item>
-
                             <Form.Item wrapperCol={{ span: 16 }}>
                                 <Button type="primary" htmlType="submit">
                                     充值

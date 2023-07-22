@@ -134,6 +134,7 @@ declare namespace API {
         responseParamsRemark?: ResponseParamsRemarkVO[];
         status?: number;
         url?: string;
+        price?: number;
     };
 
     type InterfaceInfoInvokeRequest = {
@@ -163,6 +164,7 @@ declare namespace API {
         status?: number;
         url?: string;
         userId?: number;
+        price?: number;
     };
 
     type InterfaceInfoUpdateRequest = {
@@ -178,6 +180,7 @@ declare namespace API {
         responseParamsRemark?: ResponseParamsRemarkVO[];
         status?: number;
         url?: string;
+        price?: number;
     };
 
     type InterfaceInfoVO = {
@@ -200,6 +203,7 @@ declare namespace API {
         url?: string;
         user?: UserVO;
         userId?: number;
+        price?: number;
     };
 
     type LoginUserVO = {
