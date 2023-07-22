@@ -19,6 +19,7 @@ export type Props = {
 
 const ShowModal: React.FC<Props> = (props) => {
     const { values, setVisible, visible, responseColumns, requestColumns } = props;
+    console.log('接口信息', values);
     const formRef = useRef<ProFormInstance>();
     const [responseDataSource, setResponseDataSource] = useState<
         readonly API.ResponseParamsRemarkVO[]
@@ -49,12 +50,12 @@ const ShowModal: React.FC<Props> = (props) => {
                 initialValue={values.description}
                 disabled
             />
-            {/*            <ProFormText
+            <ProFormText
                 name="price"
                 label="接口价格（元/个）"
                 initialValue={values.price}
                 disabled
-            />*/}
+            />
 
             <ProFormText name="method" label="请求方法" initialValue={values.method} disabled />
 
