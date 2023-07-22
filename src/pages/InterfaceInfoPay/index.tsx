@@ -116,6 +116,7 @@ const Index: React.FC = () => {
                                     size="large"
                                     min={1}
                                     max={100000}
+                                    step={10}
                                     defaultValue={100}
                                     onChange={onChange}
                                 />
