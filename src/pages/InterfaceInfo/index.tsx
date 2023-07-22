@@ -97,6 +97,8 @@ const Index: React.FC = () => {
                 // const jsonData = JSON.stringify(res.data as unknown as string);
                 setInvokeRes(res.data);
                 message.success('接口请求成功');
+            } else if (res.code === 50001) {
+                message.error('没有请求次数，请充值');
             } else {
                 const messageObj = JSON.parse(res.message as string);
                 message.error(messageObj.message);
