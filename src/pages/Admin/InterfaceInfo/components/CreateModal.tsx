@@ -3,6 +3,7 @@ import { EditableProTable } from '@ant-design/pro-table';
 import '@umijs/max';
 import { Form, Input } from 'antd';
 import React, { useRef, useState } from 'react';
+import { ProFormDigit } from '@ant-design/pro-form';
 
 export type FormValueType = {
     target?: string;
@@ -58,6 +59,17 @@ const CreateModal: React.FC<Props> = (props) => {
                 label="描述"
                 rules={[{ required: true, message: '描述不可为空！' }]}
             />
+
+            <ProFormDigit
+                name="price"
+                label="接口价格（元/个）"
+                initialValue={0.1}
+                min={0}
+                max={100}
+                fieldProps={{ precision: 2 }}
+                rules={[{ required: true, message: '接口价格不能为空！' }]}
+            />
+
             <ProFormText
                 name="method"
                 label="请求方法"
