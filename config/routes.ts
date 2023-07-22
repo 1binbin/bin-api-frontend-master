@@ -9,7 +9,7 @@ export default [
         hideInMenu: true,
     },
     {
-        name: '购买接口',
+        name: '接口充值',
         icon: 'smile',
         path: '/interface_info_pay/:id',
         component: './InterfaceInfoPay',

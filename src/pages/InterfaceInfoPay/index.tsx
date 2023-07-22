@@ -9,6 +9,11 @@ import { history } from '@umijs/max';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 
+const box = document.getElementById('back');
+if (box != null) {
+    box.style.left = '25px';
+}
+
 const Index: React.FC = () => {
     const [invokeLoading, setInvokeLoading] = useState(false);
     const [data, setData] = useState<API.InterfaceInfoVO>();
@@ -105,6 +110,14 @@ const Index: React.FC = () => {
                             <Form.Item wrapperCol={{ span: 16 }}>
                                 <Button type="primary" htmlType="submit">
                                     充值
+                                </Button>
+                                <Button
+                                    id="back"
+                                    onClick={() => {
+                                        history.push('/my_interface');
+                                    }}
+                                >
+                                    返回
                                 </Button>
                             </Form.Item>
                         </Form>

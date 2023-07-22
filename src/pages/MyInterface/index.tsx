@@ -125,7 +125,7 @@ const Index: React.FC = () => {
                                                     history.push('/interface_info_pay/' + item.id);
                                                 }}
                                             >
-                                                购买接口
+                                                接口充值
                                             </div>
                                         </Tooltip>,
                                     ]}

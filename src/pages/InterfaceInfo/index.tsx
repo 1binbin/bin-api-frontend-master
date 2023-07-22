@@ -8,7 +8,12 @@ import { Badge, Button, Card, Descriptions, Divider, Form, Input, message, Table
 import type { ColumnsType } from 'antd/es/table';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
+import { history } from '@umijs/max';
 
+const box = document.getElementById('back');
+if (box != null) {
+    box.style.left = '25px';
+}
 const requestColumns: ColumnsType<API.RequestParamsRemarkVO> = [
     {
         title: '名称',
@@ -171,6 +176,14 @@ const Index: React.FC = () => {
                             <Form.Item wrapperCol={{ span: 16 }}>
                                 <Button type="primary" htmlType="submit">
                                     调用
+                                </Button>
+                                <Button
+                                    id="back"
+                                    onClick={() => {
+                                        history.push('/my_interface');
+                                    }}
+                                >
+                                    返回
                                 </Button>
                             </Form.Item>
                         </Form>
