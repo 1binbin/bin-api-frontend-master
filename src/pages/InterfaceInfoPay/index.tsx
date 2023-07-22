@@ -8,15 +8,12 @@ import { Badge, Button, Card, Descriptions, Divider, Form, InputNumber, message 
 import { history } from '@umijs/max';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
+
 let payNum = 100;
 
 const box = document.getElementById('back');
-const box1 = document.getElementById('price');
 if (box != null) {
     box.style.left = '25px';
-}
-if (box1 != null) {
-    box1.style.color = 'red';
 }
 const onChange = (value: number) => {
     payNum = value;
@@ -93,9 +90,7 @@ const Index: React.FC = () => {
                             {data.url}
                         </Descriptions.Item>
                         <Descriptions.Item label="请求方法">{data.method}</Descriptions.Item>
-                        <Descriptions.Item label="接口价格" id="price">
-                            {data.price}￥/个
-                        </Descriptions.Item>
+                        <Descriptions.Item label="接口价格">{data.price}￥/个</Descriptions.Item>
                         <Descriptions.Item label="请求参数示例">
                             {data.requestParams}
                         </Descriptions.Item>
