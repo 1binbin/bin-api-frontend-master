@@ -88,7 +88,6 @@ const UpdateModal: React.FC<Props> = (props) => {
                 initialValue={values.price}
                 min={0}
                 max={100}
-                step={0.5}
                 fieldProps={{ precision: 2 }}
                 rules={[{ required: true, message: '接口价格不能为空！' }]}
             />

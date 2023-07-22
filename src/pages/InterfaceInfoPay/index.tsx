@@ -118,7 +118,6 @@ const Index: React.FC = () => {
                                     max={100000}
                                     step={10}
                                     defaultValue={100}
-                                    onChange={onChange}
                                 />
                             </Form.Item>
                             <Form.Item wrapperCol={{ span: 16 }}>
