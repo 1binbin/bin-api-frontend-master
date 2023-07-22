@@ -1,11 +1,11 @@
 import {
     getInterfaceInfoVOByIdUsingGET,
-    invokeInterfaceInfoUsingPOST,
     payInterfaceByPOST,
 } from '@/services/nero-api-backend/interfaceInfoController';
 import { useParams } from '@@/exports';
 import { PageContainer } from '@ant-design/pro-components';
 import { Badge, Button, Card, Descriptions, Divider, Form, InputNumber, message } from 'antd';
+import { history } from '@umijs/max';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 
@@ -49,12 +49,13 @@ const Index: React.FC = () => {
             });
             console.log('调用接口请求数据：', res);
             if (res.data) {
-                // res.data = res.data.replace(/\\/g, '');
                 setInvokeRes(res.data);
                 message.success('接口充值成功');
+                history.push('/my_interface');
+            } else if (res.code === 50001) {
+                message.error('该接口拥有数量上限');
             } else {
-                const messageObj = JSON.parse(res.message as string);
-                message.error(messageObj.message);
+                message.error('接口充值失败');
             }
         } catch (error: any) {
             message.error('接口充值失败');
