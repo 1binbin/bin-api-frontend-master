@@ -57,15 +57,18 @@ const CreateModal: React.FC<Props> = (props) => {
                 rules={[{ required: true, message: '描述不可为空！' }]}
             />
 
-            {/*           <ProFormDigit
+            <ProFormText
                 name="price"
                 label="接口价格（元/个）"
                 initialValue={0.1}
-                min={0}
-                max={100}
-                fieldProps={{ precision: 2 }}
-                rules={[{ required: true, message: '接口价格不能为空！' }]}
-            />*/}
+                rules={[
+                    {
+                        required: true,
+                        pattern: new RegExp(/^(([0-9]+)|([0-9]+\.[0-9]{0,2}))$/, 'g'),
+                        message: '接口价格不能为空并且输入数字（最多两位小数）！',
+                    },
+                ]}
+            />
 
             <ProFormText
                 name="method"
