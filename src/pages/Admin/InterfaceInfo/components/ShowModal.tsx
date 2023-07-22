@@ -49,12 +49,12 @@ const ShowModal: React.FC<Props> = (props) => {
                 initialValue={values.description}
                 disabled
             />
-            <ProFormText
+            {/*            <ProFormText
                 name="price"
                 label="接口价格（元/个）"
                 initialValue={values.price}
                 disabled
-            />
+            />*/}
 
             <ProFormText name="method" label="请求方法" initialValue={values.method} disabled />
 

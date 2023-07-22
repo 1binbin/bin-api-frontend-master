@@ -82,7 +82,7 @@ const UpdateModal: React.FC<Props> = (props) => {
                 rules={[{ required: true, message: '描述不可为空！' }]}
             />
 
-            <ProFormDigit
+            {/*            <ProFormDigit
                 name="price"
                 label="接口价格（元/个）"
                 initialValue={values.price}
@@ -90,7 +90,7 @@ const UpdateModal: React.FC<Props> = (props) => {
                 max={100}
                 fieldProps={{ precision: 2 }}
                 rules={[{ required: true, message: '接口价格不能为空！' }]}
-            />
+            />*/}
 
             <ProFormText
                 name="method"
