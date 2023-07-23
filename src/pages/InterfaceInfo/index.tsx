@@ -10,10 +10,6 @@ import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { history } from '@umijs/max';
 
-const box = document.getElementById('back');
-if (box != null) {
-    box.style.left = '25px';
-}
 const requestColumns: ColumnsType<API.RequestParamsRemarkVO> = [
     {
         title: '名称',
@@ -181,6 +177,7 @@ const Index: React.FC = () => {
                                 </Button>
                                 <Button
                                     id="back"
+                                    style={{ left: 25 + 'px' }}
                                     onClick={() => {
                                         history.push('/my_interface');
                                     }}

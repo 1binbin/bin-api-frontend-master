@@ -11,19 +11,22 @@ import React, { useEffect, useState } from 'react';
 
 let payNum = 100;
 
-const box = document.getElementById('back');
-if (box != null) {
-    box.style.left = '25px';
-}
-const onChange = (value: number) => {
-    payNum = value;
-    console.log(payNum);
-};
-
 const Index: React.FC = () => {
     const [invokeLoading, setInvokeLoading] = useState(false);
     const [data, setData] = useState<API.InterfaceInfoVO>();
     const params = useParams();
+
+    const onChange = (value: number) => {
+        const box = document.getElementById('totalPrice');
+        if (value) {
+            payNum = value;
+        }
+        // @ts-ignore
+        box.innerText = '总价格为：' + payNum * data.price + '￥';
+        // @ts-ignore
+        box.style.fontSize = '16px';
+        console.log(payNum);
+    };
 
     const loadData = async () => {
         try {
@@ -72,6 +75,7 @@ const Index: React.FC = () => {
         setInvokeLoading(false);
     };
 
+    // @ts-ignore
     return (
         <PageContainer>
             <Card>
@@ -118,14 +122,19 @@ const Index: React.FC = () => {
                                     max={100000}
                                     step={10}
                                     defaultValue={100}
+                                    onChange={onChange}
                                 />
                             </Form.Item>
+                            <p id="totalPrice" style={{ fontSize: 16 + 'px', color: '#F94949' }}>
+                                总价格为：{100 * data.price}￥
+                            </p>
                             <Form.Item wrapperCol={{ span: 16 }}>
                                 <Button type="primary" htmlType="submit">
                                     充值
                                 </Button>
                                 <Button
                                     id="back"
+                                    style={{ left: 25 + 'px' }}
                                     onClick={() => {
                                         history.push('/my_interface');
                                     }}
