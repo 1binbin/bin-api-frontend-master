@@ -32,6 +32,7 @@ import {
 import { RcFile, UploadChangeParam } from 'antd/es/upload';
 import React, { useEffect, useRef, useState } from 'react';
 import { uploadFileUsingPOST } from '@/services/nero-api-backend/fileController';
+import moment from 'moment';
 
 const { Paragraph } = Typography;
 
@@ -225,7 +226,8 @@ const Profile: React.FC = () => {
                         <Divider />
                         <Row>
                             <Col>
-                                <FieldTimeOutlined /> 注册时间：{data?.createTime}
+                                <FieldTimeOutlined /> 注册时间：
+                                {moment(data?.createTime).format('YYYY-MM-DD HH:mm:ss')}
                             </Col>
                         </Row>
                     </Card>
