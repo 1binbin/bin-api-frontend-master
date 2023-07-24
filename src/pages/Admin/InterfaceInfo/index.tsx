@@ -221,8 +221,6 @@ const TableList: React.FC = () => {
             title: '接口地址',
             dataIndex: 'url',
             valueType: 'text',
-            hideInTable: true,
-            hideInSearch: true,
             formItemProps: {
                 rules: [
                     {

@@ -1,4 +1,5 @@
 import { ProLayoutProps } from '@ant-design/pro-components';
+
 /**
  * @name
  */
@@ -9,14 +10,14 @@ const Settings: ProLayoutProps & {
     navTheme: 'light',
     // 拂晓蓝
     colorPrimary: '#1890ff',
-    layout: 'mix',
+    layout: 'top',
     contentWidth: 'Fluid',
     fixedHeader: true,
     fixSiderbar: true,
     colorWeak: true,
     title: 'Bin API',
     siderMenuType: 'sub',
-    pwa: true,
+    pwa: false,
     logo: 'https://image-bed-ichensw.oss-cn-hangzhou.aliyuncs.com/logo.png',
     iconfontUrl: '',
     token: {
