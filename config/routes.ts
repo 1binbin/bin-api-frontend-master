@@ -18,7 +18,18 @@ export default [
     {
         path: '/user',
         layout: false,
-        routes: [{ name: '登录', path: '/user/login', component: './User/Login' }],
+        routes: [
+            {
+                name: '登录',
+                path: '/user/login',
+                component: './User/Login',
+            },
+            {
+                name: '重置密码',
+                path: '/user/forget_password/',
+                component: './User/ForgetPassword',
+            },
+        ],
     },
     // { path: '/welcome', name: '欢迎', icon: 'smile', component: './MyInterface' },
     {

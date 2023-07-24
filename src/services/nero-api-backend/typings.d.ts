@@ -381,6 +381,11 @@ declare namespace API {
         userPassword?: string;
         isAdmin?: string;
     };
+    type UserForgetPasswordRequest = {
+        checkPassword?: string;
+        userAccount?: string;
+        userPassword?: string;
+    };
 
     type UserUpdateMyRequest = {
         userAvatar?: string;

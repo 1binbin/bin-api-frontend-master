@@ -8,12 +8,10 @@ import {
     LoginFormPage,
     ProFormCheckbox,
     ProFormInstance,
-    ProFormText,
-    ProFormSwitch,
-    ProFormRadio,
     ProFormSelect,
+    ProFormText,
 } from '@ant-design/pro-components';
-import { useModel } from '@umijs/max';
+import { history, useModel } from '@umijs/max';
 import { message, Tabs } from 'antd';
 import type { CSSProperties } from 'react';
 import React, { useRef, useState } from 'react';
@@ -147,7 +145,9 @@ const Login: React.FC = () => {
                                     style={{
                                         float: 'right',
                                     }}
-                                    onClick={() => setLoginType('forgetPassword')}
+                                    onClick={(item) => {
+                                        history.push('/user/forget_password');
+                                    }}
                                 >
                                     忘记密码 ?
                                 </a>
