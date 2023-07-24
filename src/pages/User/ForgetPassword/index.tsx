@@ -29,7 +29,7 @@ const Login: React.FC = () => {
                 const defaultRegisterSuccessMessage = '注册成功！';
                 message.success(defaultRegisterSuccessMessage);
                 // 切换到登录
-                window.location.href = '/user/login';
+                window.location.href = '/';
                 // 重置表单
                 formRef.current?.resetFields();
             }
