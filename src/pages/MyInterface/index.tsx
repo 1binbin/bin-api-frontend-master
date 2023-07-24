@@ -119,7 +119,7 @@ const Index: React.FC = () => {
                                                 在线调用
                                             </div>
                                         </Tooltip>,
-                                        <Tooltip title="购买接口" key="share">
+                                        <Tooltip title="接口充值" key="share">
                                             <div
                                                 onClick={() => {
                                                     history.push('/interface_info_pay/' + item.id);
