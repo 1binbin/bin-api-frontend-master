@@ -32,9 +32,6 @@ const Login: React.FC = () => {
                 window.location.href = '/user/login';
                 // 重置表单
                 formRef.current?.resetFields();
-            } else if (res.code === 50001) {
-                message.error('账号不存在，重置密码失败');
-                formRef.current?.resetFields();
             }
         } else {
             message.error('重置密码失败，请重试');
